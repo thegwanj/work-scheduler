@@ -1,5 +1,6 @@
-console.log('hello!');
+//console.log('hello!');
 // moment.js docs https://momentjs.com/
+var currentDayEl = document.getElementById("currentDay");
 
 // DECLARE Current time
 var currentTime = moment().format('LT');
@@ -11,6 +12,7 @@ console.log(currentHour);
 
 // DECLARE Current Day HTML Element (Day of Week, Month, Date)
 var currentDay = moment().format('LL');
+currentDayEl.textContent = currentDay;
 console.log(currentDay);
 
 // DECLARE Time Entries Container HTML Element
