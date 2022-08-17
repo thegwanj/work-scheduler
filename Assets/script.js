@@ -10,8 +10,11 @@ console.log('hello!');
 var myArray = ["adsf", "asdf"];
 for(var i = 9; i <= 17; i++){
 
+    var key = "hour-"+i;
     // Attempt to get the saved data for the hour of the loop
     var data = "";
+
+    // Compare i to current hour to determine if this hour is in the past, present, or future
 
     var template = `
     <div class="row">
