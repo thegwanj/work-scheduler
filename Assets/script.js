@@ -2,15 +2,18 @@ console.log('hello!');
 
 // DECLARE Current time
 
-// DECLARE Current Day Element
+// DECLARE Current hour
 
-// DECLARE Time Entries Container Element
+// DECLARE Current Day HTML Element
+
+// DECLARE Time Entries Container HTML Element
+var containerEl;
 
 // Render a block for each hour of the day
 var myArray = ["adsf", "asdf"];
 for(var i = 9; i <= 17; i++){
 
-    var key = "hour-"+i;
+    var key = `hour-${i}`;
     // Attempt to get the saved data for the hour of the loop
     var data = "";
 
@@ -32,6 +35,19 @@ for(var i = 9; i <= 17; i++){
     `;
 
     // Append the html to page
-}
-// Save an hour to local storage
 
+}
+
+// Set up a "click" event listener on the container
+containerEl.on("click", "button", function(event){
+  
+  // Fetch the hour from the clicked button's (event.target) "data-hour" attribute
+
+  // Use the hour to create the key for local storage
+
+  // From the clicked button, traverse the DOM to the nearby <textarea> to fetch its value
+
+  //Use the key and the value to save into localStorage
+});
+
+  // Save an hour to local storage
