@@ -30,6 +30,8 @@ for(var i = 9; i <= 17; i++){
     // Compare i to current hour to determine if this hour is in the past, present, or future
     //variable for past, present, or future
     var time = '';
+    //variable for hours under 10
+    var earlyHour = '';
 
     if(currentHour > i){
       //if i is in the past
@@ -42,35 +44,34 @@ for(var i = 9; i <= 17; i++){
       time = 'present';
     }
 
-    var template = `
-    <div class="row ${time}">
-        <div>
-          ${i}AM
-        </div>
-        <div>
-          <textarea>${data}</textarea>
-        </div>
-        <div>
-          <button data-hour="${i}">Save</button>
-        </div>
-      </div>
-    </div>
-    `;
+    if(i < 10){
+      earlyHour = 'earlyHour';
+    }
+    // var template = `
+    // <div class="row ${time}">
+    //     <div>
+    //       ${i}AM
+    //     </div>
+    //     <div>
+    //       <textarea>${data}</textarea>
+    //     </div>
+    //     <div>
+    //       <button data-hour="${i}">Save</button>
+    //     </div>
+    //   </div>
+    // </div>
+    // `;
 
     // Append the html to page
     // id = 'timeEntries'
     var outputHTML = document.createElement('div');
     outputHTML.innerHTML = `
-    <div class="row ${time}">
-        <div>
+    <div class="row">
+        <div class="hour ${earlyHour}">
           ${i}AM
         </div>
-        <div>
-          <textarea>${data}</textarea>
-        </div>
-        <div>
-          <button class="saveBtn" data-hour="${i}">Save</button>
-        </div>
+        <textarea class="${time}" cols="95">${data}</textarea>
+        <button class="saveBtn" data-hour="${i}">Save</button>
       </div>
     </div>
     `;
