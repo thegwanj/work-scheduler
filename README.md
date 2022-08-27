@@ -1,7 +1,7 @@
 # Work Scheduler
 
 ## Description
-Week 5 challenge that focueses on using the Moment.js library. We are making a work scheduler that displays the current day and its hours. The user will be able to edit and save the contents of each hour's box. The following is the user story and acceptance criteria for the project:
+Week 5 challenge that focuses on using the Moment.js library. We are making a work scheduler that displays the current day and its hours. The user will be able to edit and save the contents of each hour's box. The following is the user story and acceptance criteria for the project:
 
 ### User Story
 
