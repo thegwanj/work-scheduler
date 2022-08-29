@@ -79,7 +79,7 @@ for(var i = 9; i <= 17; i++){
         <div class="hour ${earlyHour}">
           ${i}${ampm}
         </div>
-        <textarea class="${time}" cols="95">${data}</textarea>
+        <textarea id="textarea${i}" class="${time}" cols="95">${data}</textarea>
         <button class="saveBtn" data-hour="${i}">Save</button>
       </div>
     </div>
@@ -88,13 +88,35 @@ for(var i = 9; i <= 17; i++){
 }
 
 // Set up a "click" event listener on the container
-containerEl.on("click", "button", function(event){
+$(timeEntries).on("click", "button", function(event){
   
+  //Example to reference
+  // var counter = document.querySelector("#counter");
+  // var addButton = document.querySelector("#add");
+  // var subtractButton = document.querySelector("#subtract");
+
+  // var count = localStorage.getItem("count");
+
+  // counter.textContent = count;
+  // addButton.addEventListener("click", function() {
+  //   if (count < 24) {
+  //     count++;
+  //     counter.textContent = count;
+  //     localStorage.setItem("count", count);
+  //   }
+  // });
+
   // Fetch the hour from the clicked button's (event.target) "data-hour" attribute
+  var rowHour = event.target.dataset.hour;
+  console.log(rowHour);
 
   // Use the hour to create the key for local storage
+  var rowName = `hour${rowHour}`;
+  console.log(rowName);
 
   // From the clicked button, traverse the DOM to the nearby <textarea> to fetch its value
+  var taskbox = document.getElementById(`textarea${rowHour}`).value;
+  console.log(taskbox);
 
   //Use the key and the value to save into localStorage
 });
