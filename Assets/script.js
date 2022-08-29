@@ -32,6 +32,8 @@ for(var i = 9; i <= 17; i++){
     var time = '';
     //variable for hours under 10
     var earlyHour = '';
+    //variable for if it is AM or PM
+    var ampm = 'am';
 
     if(currentHour > i){
       //if i is in the past
@@ -47,6 +49,13 @@ for(var i = 9; i <= 17; i++){
     if(i < 10){
       earlyHour = 'earlyHour';
     }
+
+    if(i < 12){
+      ampm = 'AM';
+    } else {
+      ampm = 'PM';
+    }
+    
     // var template = `
     // <div class="row ${time}">
     //     <div>
@@ -68,7 +77,7 @@ for(var i = 9; i <= 17; i++){
     outputHTML.innerHTML = `
     <div class="row">
         <div class="hour ${earlyHour}">
-          ${i}AM
+          ${i}${ampm}
         </div>
         <textarea class="${time}" cols="95">${data}</textarea>
         <button class="saveBtn" data-hour="${i}">Save</button>
