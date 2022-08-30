@@ -28,3 +28,6 @@ THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
 ```
+
+## Deployed Application
+The deployed application can by found by going to the following link: https://thegwanj.github.io/work-scheduler/
