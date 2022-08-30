@@ -59,23 +59,6 @@ for(var i = 9; i <= 17; i++){
       ampm = 'PM';
     }
     
-    // var template = `
-    // <div class="row ${time}">
-    //     <div>
-    //       ${i}AM
-    //     </div>
-    //     <div>
-    //       <textarea>${data}</textarea>
-    //     </div>
-    //     <div>
-    //       <button data-hour="${i}">Save</button>
-    //     </div>
-    //   </div>
-    // </div>
-    // `;
-
-    // Append the html to page
-    // id = 'timeEntries'
     var outputHTML = document.createElement('div');
     outputHTML.innerHTML = `
     <div class="row">
@@ -92,23 +75,6 @@ for(var i = 9; i <= 17; i++){
 
 // Set up a "click" event listener on the container
 $(timeEntries).on("click", "button", function(event){
-  
-  //Example to reference
-  // var counter = document.querySelector("#counter");
-  // var addButton = document.querySelector("#add");
-  // var subtractButton = document.querySelector("#subtract");
-
-  // var count = localStorage.getItem("count");
-
-  // counter.textContent = count;
-  // addButton.addEventListener("click", function() {
-  //   if (count < 24) {
-  //     count++;
-  //     counter.textContent = count;
-  //     localStorage.setItem("count", count);
-  //   }
-  // });
-
   // Fetch the hour from the clicked button's (event.target) "data-hour" attribute
   var rowHour = event.target.dataset.hour;
   console.log(rowHour);
@@ -124,5 +90,3 @@ $(timeEntries).on("click", "button", function(event){
   //Use the key and the value to save into localStorage
   localStorage.setItem(rowName, taskbox);
 });
-
-  // Save an hour to local storage
