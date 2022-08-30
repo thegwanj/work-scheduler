@@ -25,7 +25,10 @@ for(var i = 9; i <= 17; i++){
 
     var key = `hour-${i}`;
     // Attempt to get the saved data for the hour of the loop
-    var data = "";
+    var data = localStorage.getItem(`hour${i}`);
+    if (data == null){
+      data = '';
+    }
 
     // Compare i to current hour to determine if this hour is in the past, present, or future
     //variable for past, present, or future
@@ -85,7 +88,7 @@ for(var i = 9; i <= 17; i++){
     </div>
     `;
     timeEntries.appendChild(outputHTML);
-}
+};
 
 // Set up a "click" event listener on the container
 $(timeEntries).on("click", "button", function(event){
@@ -119,6 +122,7 @@ $(timeEntries).on("click", "button", function(event){
   console.log(taskbox);
 
   //Use the key and the value to save into localStorage
+  localStorage.setItem(rowName, taskbox);
 });
 
   // Save an hour to local storage
