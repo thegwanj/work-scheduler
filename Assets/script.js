@@ -66,7 +66,9 @@ for(var i = 9; i <= 17; i++){
           ${i}${ampm}
         </div>
         <textarea id="textarea${i}" class="${time}" cols="95">${data}</textarea>
-        <button class="saveBtn" data-hour="${i}">Save</button>
+        <button class="saveBtn" data-hour="${i}"><span class="material-symbols-outlined">
+        save
+        </span></button>
       </div>
     </div>
     `;
